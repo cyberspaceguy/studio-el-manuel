@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE STUDIO SELECT | STUDIO EL MANUEL</title>
+    <style>
+        :root {
+            --neon-blue: #00d2ff;
+            --neon-purple: #9d50bb;
+            --glass: rgba(255, 255, 255, 0.03);
+            --border: rgba(255, 255, 255, 0.08);
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            background: #050505;
+            color: white;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            overflow: hidden; 
+        }
+
+        .bg-glow {
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            background: radial-gradient(circle at 10% 20%, rgba(0, 210, 255, 0.1) 0%, transparent 40%);
+            z-index: -1;
+            transition: 1s ease;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 30px 0;
+            text-align: center;
+            background: rgba(0,0,0,0.6);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            z-index: 100;
+        }
+
+        header h1 {
+            font-size: 0.85rem;
+            letter-spacing: 10px;
+            font-weight: 900;
+            margin: 0;
+            background: linear-gradient(to right, #fff, var(--neon-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-transform: uppercase;
+        }
+
+        .snap-container {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            height: 100vh;
+            scrollbar-width: none; 
+        }
+        .snap-container::-webkit-scrollbar { display: none; }
+
+        section {
+            flex: 0 0 100vw;
+            height: 100vh;
+            scroll-snap-align: start;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 5%;
+            box-sizing: border-box;
+        }
+
+        .card {
+            background: var(--glass);
+            backdrop-filter: blur(40px);
+            border: 1px solid var(--border);
+            border-radius: 40px;
+            padding: 60px;
+            width: 90%;
+            max-width: 950px;
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            box-shadow: 0 50px 100px -20px rgba(0, 0, 0, 0.9);
+        }
+
+        .visual-container { flex: 0 0 340px; height: 340px; }
+
+        .visual-element {
+            width: 100%; height: 100%;
+            border-radius: 50%;
+            border: 1.5px solid var(--border);
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 50px rgba(0, 210, 255, 0.1);
+        }
+
+        .visual-element img { width: 100%; height: 100%; object-fit: cover; }
+
+        .record { animation: spin 25s linear infinite; }
+        @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+        .text-content { flex: 1; }
+        .text-content h2 {
+            font-size: 0.7rem;
+            color: var(--neon-blue);
+            text-transform: uppercase;
+            letter-spacing: 6px;
+            margin-bottom: 12px;
+        }
+
+        .text-content h3 {
+            font-size: 4rem;
+            margin: 0 0 20px 0;
+            font-weight: 900;
+            line-height: 0.95;
+            letter-spacing: -2px;
+        }
+
+        .text-content p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            opacity: 0.5;
+            margin-bottom: 35px;
+            max-width: 400px;
+        }
+
+        .play-btn {
+            padding: 16px 45px;
+            background: white;
+            color: black;
+            border-radius: 100px;
+            border: none;
+            font-weight: 800;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+            text-decoration: none;
+            display: inline-block;
+        }
+        .play-btn:hover {
+            transform: translateY(-5px);
+            background: var(--neon-blue);
+            color: white;
+            box-shadow: 0 15px 30px rgba(0, 210, 255, 0.3);
+        }
+
+        footer {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 100;
+            text-align: center;
+            width: 100%;
+        }
+        .founder-tag {
+            font-size: 0.6rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            opacity: 0.4;
+            font-weight: 300;
+        }
+        .founder-name { font-weight: 700; color: white; opacity: 1; }
+
+        @media (max-width: 768px) {
+            body, html { overflow-y: auto; }
+            .snap-container {
+                flex-direction: column;
+                overflow-x: hidden;
+                overflow-y: auto;
+                scroll-snap-type: y mandatory;
+            }
+            section { flex: 0 0 100vh; }
+            .card {
+                flex-direction: column;
+                text-align: center;
+                gap: 30px;
+                padding: 40px 30px;
+                width: 85%;
+            }
+            .visual-container { flex: 0 0 220px; width: 220px; height: 220px; }
+            .text-content h3 { font-size: 2.8rem; }
+            footer { bottom: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="bg-glow" id="glow"></div>
+
+<header>
+    <h1>STUDIO EL MANUEL</h1>
+</header>
+
+<footer>
+    <div class="founder-tag">
+        Founded by <span class="founder-name">Emmanuel Mutaka</span> | Art Critic & Designer
+    </div>
+</footer>
+
+<div class="snap-container" id="main-slider">
+
+    <section>
+        <div class="card">
+            <div class="visual-container">
+                <div class="visual-element">
+                    <img src="https://static01.nyt.com/images/2024/04/08/multimedia/08xp-jcole/08xp-jcole-superJumbo.jpg?quality=75&auto=webp" alt="J. Cole">
+                </div>
+            </div>
+            <div class="text-content">
+                <h2>Artist of the Month</h2>
+                <h3>J.COLE</h3>
+                <p>A deep dive into the lyricism and legacy of Dreamville's finest.</p>
+                <a href="cole.html" class="play-btn">READ REVIEW</a>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="card">
+            <div class="visual-container">
+                <div class="visual-element record">
+                    <img src="https://i.scdn.co/image/ab67616d0000b27380788f104c780412212e97e3" alt="The Off-Season">
+                </div>
+            </div>
+            <div class="text-content">
+                <h2 style="color: var(--neon-purple);">Album of the Month</h2>
+                <h3>The Off-Season</h3>
+                <p>Emmanuel Mutaka's masterclass review on Cole's shift in perspective.</p>
+                <a href="offseason.html" class="play-btn">DEEP DIVE</a>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="card">
+            <div class="visual-container">
+                <div class="visual-element">
+                    <img src="https://i.scdn.co/image/ab67616d00001e02f85939919d89f1227b967aaa" alt="Moment by Bazzi">
+                </div>
+            </div>
+            <div class="text-content">
+                <h2 style="color: #6fb8d2;">Track Of The Month</h2>
+                <h3>Moment</h3>
+                <p>Orchestral analysis of Bazzi's clever line delivery and production.</p>
+                <a href="moment.html" class="play-btn">ANALYSIS</a>
+            </div>
+        </div>
+    </section>
+</div>
+
+<script>
+    const container = document.getElementById('main-slider');
+    const glow = document.getElementById('glow');
+
+    container.addEventListener('scroll', () => {
+        const scrollIndex = Math.round(container.scrollLeft / window.innerWidth || container.scrollTop / window.innerHeight);
+        if (scrollIndex === 1) {
+            glow.style.background = 'radial-gradient(circle at 90% 80%, rgba(157, 80, 187, 0.15) 0%, transparent 40%)';
+        } else if (scrollIndex === 2) {
+            glow.style.background = 'radial-gradient(circle at 50% 50%, rgba(111, 184, 210, 0.15) 0%, transparent 50%)';
+        } else {
+            glow.style.background = 'radial-gradient(circle at 10% 20%, rgba(0, 210, 255, 0.12) 0%, transparent 40%)';
+        }
+    });
+</script>
+
+</body>
+</html>

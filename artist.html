@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STUDIO PROFILE | J. COLE</title>
+    <style>
+        :root {
+            --accent: #d4af37; /* Gold accent for the Artist Profile */
+            --bg: #050505;
+            --glass: rgba(255, 255, 255, 0.02);
+            --text-main: #e0e0e0;
+            --text-dim: #888;
+        }
+
+        body { 
+            background: var(--bg); 
+            color: var(--text-main); 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
+            margin: 0;
+            padding: 80px 5%;
+            line-height: 1.8;
+        }
+
+        .container { max-width: 750px; margin: 0 auto; }
+
+        .back-btn { 
+            color: var(--accent); 
+            text-decoration: none; 
+            font-weight: 700; 
+            text-transform: uppercase; 
+            letter-spacing: 2px;
+            font-size: 0.7rem;
+            display: inline-block;
+            margin-bottom: 40px;
+            transition: 0.3s ease;
+        }
+        .back-btn:hover { opacity: 0.6; transform: translateX(-5px); }
+
+        /* Artist Hero Image */
+        .hero-header {
+            width: 100%;
+            margin-bottom: 60px;
+            text-align: center;
+        }
+
+        .hero-img {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 8px;
+            box-shadow: 0 50px 100px rgba(0,0,0,1);
+            filter: grayscale(20%); /* Gives it a more "critic" look */
+        }
+
+        h1 { 
+            font-size: clamp(2.5rem, 8vw, 4.5rem); 
+            margin: 10px 0; 
+            letter-spacing: -3px; 
+            line-height: 1;
+            color: white;
+        }
+
+        .category-tag { 
+            color: var(--text-dim); 
+            text-transform: uppercase; 
+            letter-spacing: 4px; 
+            font-size: 0.65rem; 
+            margin-bottom: 50px;
+            border-left: 2px solid var(--accent);
+            padding-left: 15px;
+        }
+
+        .review-content p { 
+            font-size: 1.2rem; 
+            margin-bottom: 30px;
+            color: rgba(255,255,255,0.8); 
+        }
+
+        /* Critique Box Styling */
+        .critique-box {
+            background: var(--glass);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 50px;
+            border-radius: 30px;
+            margin-top: 80px;
+        }
+
+        .critique-box h3 {
+            margin-top: 0;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: var(--accent);
+            margin-bottom: 40px;
+        }
+
+        .bullet-point {
+            margin-bottom: 35px;
+        }
+
+        .bullet-point:last-child { margin-bottom: 0; }
+
+        .bullet-point strong {
+            display: block;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            color: white;
+            letter-spacing: -0.5px;
+        }
+
+        .bullet-point p {
+            margin: 0;
+            font-size: 1rem;
+            color: var(--text-dim);
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-btn">← Back to Selects</a>
+        
+        <div class="hero-header">
+            <img src="https://www.billboard.com/wp-content/uploads/2026/01/J-Cole-by-David-Peters-press-billboard-1800.jpg?w=942&h=628&crop=1" alt="J. Cole Artist Profile" class="hero-img">
+        </div>
+
+        <h1>The G.O.A.T Of Story Telling</h1>
+        <div class="category-tag">Artist Profile by Emmanuel Mutaka</div>
+
+        <div class="review-content">
+            <p>J. Cole occupies a space in hip-hop that few can inhabit: he is both a commercial titan and a lyrical purist. His journey from the 'Dollar and a Dream' era to the cinematic heights of <em>The Fall Off</em> represents more than just career growth; it’s a masterclass in artistic integrity.</p>
+
+            <p>What sets Cole apart is his ability to remain grounded while reaching for technical perfection. He doesn't just rap; he documents the human condition. Whether he’s exploring the pressures of fame or the nostalgia of home, his delivery remains conversational yet complex.</p>
+
+            <p>He has mastered the art of the 'slow-burn'—creating music that doesn't just trend for a week but lives in the listener's mind for years. In an era of fleeting 'vibes,' Cole provides substance, reminding us that storytelling is the heartbeat of the genre.</p>
+        </div>
+        
+        <div class="critique-box">
+            <h3>Key Takeaways</h3>
+            
+            <div class="bullet-point">
+                <strong>Lyrical Integrity</strong>
+                <p>Even at the peak of his fame, Cole has never sacrificed the pen. He remains dedicated to the craft of bars, metaphors, and cohesive messaging.</p>
+            </div>
+
+            <div class="bullet-point">
+                <strong>Production Self-Sufficiency</strong>
+                <p>A rare double-threat, Cole’s ear for soulful, jazz-inflected production—often handled by himself—gives his discography a unified, organic sound.</p>
+            </div>
+
+            <div class="bullet-point">
+                <strong>The "Middle Child" Perspective</strong>
+                <p>He successfully bridges the gap between the legends of the 90s and the new generation, acting as a mentor and a fierce competitor simultaneously.</p>
+            </div>
+
+            <div class="bullet-point">
+                <strong>Relatability vs. Iconography</strong>
+                <p>Despite his status, he maintains a 'man of the people' persona, making his high-concept storytelling feel like a conversation with a close friend.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
